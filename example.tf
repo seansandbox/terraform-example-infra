@@ -7,13 +7,13 @@ terraform {
 
 module "server" {
     source = "github.com/seansandbox/terraform-example-modules//server"
-    number_of_instances = 1
-    cloud_account_name = "AWS14"
+    number_of_instances = 2
+    cloud_account_name = "${var.cloud_account_name}"
     ec2_instance_guest_os_type = "WV"
     hosted_application = "DBS"
-    environment_number_range = 800
+    environment_number_range = "${var.environment_number_range}"
     subnet_id = "subnet-a932f6d2"
-    instance_type = "t2.nano"
+    instance_type = "${var.db_instance_size}"
     user_data = "${var.user_data}"
     key_name = "${var.key_name}"
     vpc_id = "${var.vpc_id}"
