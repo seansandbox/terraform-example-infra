@@ -17,6 +17,10 @@ module "server" {
     user_data = "${var.user_data}"
     key_name = "${var.key_name}"
     vpc_id = "${var.vpc_id}"
+    chef_server_url = "${var.chef_server_url}"
+    chef_environment = "${var.chef_environment}"
+    chef_validation_key = "${var.chef_validation_key}"
+    chef_validation_client_name = "${var.chef_validation_client_name}"
 }
 
 module "password" {
