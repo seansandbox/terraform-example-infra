@@ -7,7 +7,7 @@ terraform {
 
 module "server" {
     source = "github.com/seansandbox/terraform-example-modules//server"
-    number_of_instances = 2
+    number_of_instances = 1
     cloud_account_name = "${var.cloud_account_name}"
     ec2_instance_guest_os_type = "WV"
     hosted_application = "DBS"
