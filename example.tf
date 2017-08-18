@@ -12,7 +12,7 @@ module "server" {
     ec2_instance_guest_os_type = "WV"
     hosted_application = "DBS"
     environment_number_range = "${var.environment_number_range}"
-    subnet_id = "subnet-a932f6d2"
+    subnet_id = "{var.subnet_id}"
     instance_type = "${var.db_instance_size}"
     user_data = "${var.user_data}"
     key_name = "${var.key_name}"
