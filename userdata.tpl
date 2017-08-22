@@ -6,10 +6,10 @@
   # Set Administrator password
   try {
   	$admin = [adsi]("WinNT://./administrator, user")
-  	$admin.psbase.invoke("SetPassword", "${var.admin_password}")
+  	$admin.psbase.invoke("SetPassword", "${admin_password}")
   }
   catch {
-  	"Could not set password to: ${var.admin_password}. Exception was: $($_.Exception.message)" | Out-File c:\set_admin_password_error.log
+  	"Could not set password to: ${admin_password}. Exception was: $($_.Exception.message)" | Out-File c:\set_admin_password_error.log
     Write-Host "FATAL: Could not set admin password"
     Exit
   }

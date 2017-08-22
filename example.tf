@@ -14,13 +14,23 @@ module "server" {
     environment_number_range = "${var.environment_number_range}"
     subnet_id = "${var.subnet_id}"
     instance_type = "${var.db_instance_size}"
-    user_data = "${var.user_data}"
+    user_data = "${template_file.user_data.rendered}"
     key_name = "${var.key_name}"
     vpc_id = "${var.vpc_id}"
     chef_server_url = "${var.chef_server_url}"
     chef_environment = "${var.chef_environment}"
     chef_user_name = "${var.chef_user_name}"
     chef_user_key = "${var.chef_user_key}"
+}
+
+data "template_file" "user_data" {
+  template = "userdata.tpl"
+  vars {
+    admin_password = "${var.admin_password}"
+  }
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 module "password" {
