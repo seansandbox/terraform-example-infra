@@ -20,7 +20,7 @@ module "server" {
     chef_environment = "${var.chef_environment}"
     chef_user_name = "${var.chef_user_name}"
     chef_user_key = "${var.chef_user_key}"
-    admin_password = "${var.admin_password"}
+    admin_password = "${var.admin_password}"
 }
 
 module "password" {
