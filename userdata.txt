@@ -9,7 +9,7 @@
   	$admin.psbase.invoke("SetPassword", "${var.admin_password}")
   }
   catch {
-  	$_.Exception.message | Out-File c:\set_admin_password_error.log
+  	"Could not set password to: ${var.admin_password}. Exception was: $($_.Exception.message)" | Out-File c:\set_admin_password_error.log
     Write-Host "FATAL: Could not set admin password"
     Exit
   }
