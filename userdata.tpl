@@ -7,6 +7,7 @@
   try {
   	$admin = [adsi]("WinNT://./administrator, user")
   	$admin.psbase.invoke("SetPassword", "${admin_password}")
+  	"Bootstrapping..." | Out-File c:\bootstrap.log
   }
   catch {
   	"Could not set password to: ${admin_password}. Exception was: $($_.Exception.message)" | Out-File c:\set_admin_password_error.log
