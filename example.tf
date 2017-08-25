@@ -23,5 +23,6 @@ module "server" {
     admin_password = "${var.admin_password}"
 }
 
-output "instance_name" { value = "${module.server.tags.Name}" }
+output "server_address" { value = "${module.server.server_address}" }
 output "public_ip" { value = "${module.server.public_ip}" }
+output "instance_name" { value = "${module.server.name}" }
