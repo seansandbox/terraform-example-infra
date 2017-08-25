@@ -23,9 +23,5 @@ module "server" {
     admin_password = "${var.admin_password}"
 }
 
-module "password" {
-  source = "github.com/seansandbox/terraform-example-modules//password"
-  length = "20"
-}
-
-output "password" { value = "${module.password.password}" }
+output "instance_name" { value = "${module.server.tags.Name}" }
+output "public_ip" { value = "${module.server.public_ip}" }
