@@ -20,6 +20,7 @@ module "server" {
     chef_environment = "${var.chef_environment}"
     chef_user_name = "${var.chef_user_name}"
     chef_user_key = "${var.chef_user_key}"
+    chef_run_list = "${var.chef_run_list}"
     admin_password = "${var.admin_password}"
 }
 

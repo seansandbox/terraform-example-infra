@@ -9,4 +9,5 @@ variable "chef_server_url" {}
 variable "chef_environment" { description = "Chef environment" }
 variable "chef_user_name" {}
 variable "chef_user_key" {}
+variable "chef_run_list" {}
 variable "admin_password" {}
